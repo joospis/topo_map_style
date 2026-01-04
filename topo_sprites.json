@@ -45,15 +45,15 @@
     "height": 14,
     "pixelRatio": 1,
     "width": 17,
-    "x": 1975,
-    "y": 52
+    "x": 2021,
+    "y": 56
   },
   "us-state_2": {
     "height": 14,
     "pixelRatio": 1,
     "width": 22,
-    "x": 1953,
-    "y": 52
+    "x": 1999,
+    "y": 56
   },
   "us-state_3": {
     "height": 14,
@@ -84,6 +84,13 @@
     "y": 0
   },
   "wetland": {
+    "height": 20,
+    "pixelRatio": 1,
+    "width": 46,
+    "x": 1953,
+    "y": 52
+  },
+  "wetland_old": {
     "height": 52,
     "pixelRatio": 1,
     "width": 52,

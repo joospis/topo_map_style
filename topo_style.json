@@ -173,7 +173,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "hydrofgb",
-      "filter": ["any", ["!has", "intermittent"], ["==", "intermittent", "no"]],
+      "filter": ["any", ["==", "intermittent", "no"], ["!has", "wetland"]],
       "paint": {
         "line-color": "rgba(66, 103, 255, 1)",
         "line-opacity": [

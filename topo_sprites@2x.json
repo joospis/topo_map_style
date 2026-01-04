@@ -45,15 +45,15 @@
     "height": 28,
     "pixelRatio": 2,
     "width": 34,
-    "x": 3950,
-    "y": 104
+    "x": 4042,
+    "y": 112
   },
   "us-state_2": {
     "height": 28,
     "pixelRatio": 2,
     "width": 44,
-    "x": 3906,
-    "y": 104
+    "x": 3998,
+    "y": 112
   },
   "us-state_3": {
     "height": 28,
@@ -84,6 +84,13 @@
     "y": 0
   },
   "wetland": {
+    "height": 40,
+    "pixelRatio": 2,
+    "width": 92,
+    "x": 3906,
+    "y": 104
+  },
+  "wetland_old": {
     "height": 104,
     "pixelRatio": 2,
     "width": 104,
