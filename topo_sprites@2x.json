@@ -1,0 +1,93 @@
+{
+  "us-highway_1": {
+    "height": 1200,
+    "pixelRatio": 2,
+    "width": 1200,
+    "x": 0,
+    "y": 1202
+  },
+  "us-highway_2": {
+    "height": 1200,
+    "pixelRatio": 2,
+    "width": 1200,
+    "x": 0,
+    "y": 2402
+  },
+  "us-highway_3": {
+    "height": 1200,
+    "pixelRatio": 2,
+    "width": 1500,
+    "x": 1502,
+    "y": 0
+  },
+  "us-interstate_1": {
+    "height": 1202,
+    "pixelRatio": 2,
+    "width": 1202,
+    "x": 1502,
+    "y": 1200
+  },
+  "us-interstate_2": {
+    "height": 1202,
+    "pixelRatio": 2,
+    "width": 1202,
+    "x": 2704,
+    "y": 1200
+  },
+  "us-interstate_3": {
+    "height": 1202,
+    "pixelRatio": 2,
+    "width": 1502,
+    "x": 0,
+    "y": 0
+  },
+  "us-state_1": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 34,
+    "x": 3950,
+    "y": 104
+  },
+  "us-state_2": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 44,
+    "x": 3906,
+    "y": 104
+  },
+  "us-state_3": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 54,
+    "x": 4010,
+    "y": 84
+  },
+  "us-state_4": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 64,
+    "x": 4010,
+    "y": 56
+  },
+  "us-state_5": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 74,
+    "x": 4010,
+    "y": 28
+  },
+  "us-state_6": {
+    "height": 28,
+    "pixelRatio": 2,
+    "width": 84,
+    "x": 4010,
+    "y": 0
+  },
+  "wetland": {
+    "height": 104,
+    "pixelRatio": 2,
+    "width": 104,
+    "x": 3906,
+    "y": 0
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "version": 8,
+  "name": "Topo Style",
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "sources": {
+    "basemap": {"type": "vector", "url": "http://localhost:3002/basemap"},
+    "hillshade": {"type": "raster", "url": "http://localhost:3000/hillshade"},
+    "osm": {"type": "vector", "url": "http://localhost:3000/osm"},
+    "contour_feet": {
+      "type": "vector",
+      "url": "http://localhost:3000/contour_feet"
+    },
+    "contour_meter": {
+      "type": "vector",
+      "url": "http://localhost:3000/contour_meter"
+    }
+  },
+  "sprite": "http://localhost:3001/topo_sprites",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": {"stops": [[4, "#FFF"], [5, "#C2E1A8"]]}}
+    },
+    {
+      "id": "world_water-outline",
+      "type": "line",
+      "source": "basemap",
+      "source-layer": "world-water",
+      "maxzoom": 24,
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "rgba(66, 103, 255, 1)"}
+    },
+    {
+      "id": "world_water",
+      "type": "fill",
+      "source": "basemap",
+      "source-layer": "world-water",
+      "maxzoom": 24,
+      "paint": {"fill-color": "#7E9CD4"}
+    },
+    {
+      "id": "buffer_background",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "bufferfgb",
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(255, 255, 255, 1)", "fill-opacity": 0.7}
+    },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "landcoverfgb",
+      "minzoom": 0,
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#C2E1A8"}
+    },
+    {
+      "id": "park-fill",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "parkfgb",
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(140, 208, 134, 1)", "fill-opacity": 0.1}
+    },
+    {
+      "id": "hillshade",
+      "type": "raster",
+      "source": "hillshade",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "raster-opacity": 0.3,
+        "raster-contrast": 0.6,
+        "raster-brightness-min": 0.9,
+        "raster-brightness-max": 1
+      }
+    },
+    {
+      "id": "waterbody",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["any", ["!has", "wetland"], ["==", "wetland", "no"]]
+      ],
+      "paint": {"fill-color": "#7E9CD4"}
+    },
+    {
+      "id": "contours-intermediate-imperial",
+      "type": "line",
+      "source": "contour_feet",
+      "source-layer": "contour",
+      "filter": ["all", ["==", "is_index", "0"]],
+      "paint": {
+        "line-color": "rgb(179,134,89)",
+        "line-width": 0.216,
+        "line-opacity": {"base": 1, "stops": [[10, 0], [12, 0.1], [14, 1]]}
+      }
+    },
+    {
+      "id": "contours-index-imperial",
+      "type": "line",
+      "source": "contour_feet",
+      "source-layer": "contour",
+      "filter": ["all", ["==", "is_index", "1"]],
+      "paint": {
+        "line-color": "rgb(145,88,40)",
+        "line-width": 0.5,
+        "line-opacity": {"base": 1, "stops": [[10, 0], [12, 0.1], [14, 1]]}
+      }
+    },
+    {
+      "id": "contours-labels-imperial",
+      "type": "symbol",
+      "source": "contour_feet",
+      "source-layer": "contour",
+      "minzoom": 15,
+      "filter": ["all", ["==", "is_index", "1"]],
+      "layout": {
+        "text-field": ["to-string", ["get", "elev"]],
+        "symbol-placement": "line",
+        "text-rotation-alignment": "map",
+        "text-font": ["Roboto Medium Italic"],
+        "text-size": {"stops": [[12, 8], [14, 10], [16, 12]]},
+        "text-allow-overlap": false,
+        "symbol-spacing": 500
+      },
+      "paint": {
+        "text-color": "rgba(131, 66, 37, 1)",
+        "text-halo-color": "rgba(240, 240, 240, 1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "waterline-intermittent",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": ["all", ["==", "intermittent", "yes"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7E9CD4",
+        "line-opacity": {
+          "stops": [[7, 0], [10, 0.2], [12, 0.5], [13, 1]],
+          "base": 0
+        },
+        "line-width": 1.5,
+        "line-dasharray": [2, 2]
+      }
+    },
+    {
+      "id": "wetland-background",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": ["all", ["has", "wetland"]],
+      "paint": {"fill-color": "#C2E1A8"}
+    },
+    {
+      "id": "wetland",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": ["all", ["has", "wetland"]],
+      "paint": {"fill-pattern": "wetland"}
+    },
+    {
+      "id": "waterline-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": ["any", ["!has", "intermittent"], ["==", "intermittent", "no"]],
+      "paint": {
+        "line-color": "rgba(66, 103, 255, 1)",
+        "line-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7,
+          0,
+          10,
+          0.2,
+          12,
+          0.5,
+          13,
+          1
+        ],
+        "line-width": 1.7
+      }
+    },
+    {
+      "id": "waterline",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["any", ["!has", "intermittent"], ["==", "intermittent", "no"]]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#7E9CD4",
+        "line-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7,
+          0,
+          10,
+          0.2,
+          12,
+          0.5,
+          13,
+          1
+        ],
+        "line-width": 1.5
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "buildingfgb",
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "stops": [[15.5, "#f2eae2"], [16, "#dfdbd7"]]
+        },
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "building-top",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "buildingfgb",
+      "paint": {
+        "fill-translate": {"base": 1, "stops": [[14, [0, 0]], [16, [-2, -2]]]},
+        "fill-outline-color": "#dfdbd7",
+        "fill-color": "#f2eae2",
+        "fill-opacity": {"base": 1, "stops": [[13, 0], [16, 1]]}
+      }
+    },
+    {
+      "id": "highway-small-roads-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(133, 133, 133, 1)",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        }
+      }
+    },
+    {
+      "id": "highway-small-roads",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(224, 224, 205, 1)",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1,
+          "stops": [[12, 1], [13, 2], [14, 3], [20, 10]]
+        }
+      }
+    },
+    {
+      "id": "highway-secondary-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-opacity": 1,
+        "line-width": {"base": 1.2, "stops": [[6, 1.5], [20, 17]]}
+      }
+    },
+    {
+      "id": "highway-secondary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#e5d7a0",
+        "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 18]]}
+      }
+    },
+    {
+      "id": "highway-primary-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "primary"]],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[5, 0.5], [8, 0.6], [9, 1.5], [20, 22]]
+        }
+      }
+    },
+    {
+      "id": "highway-primary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "primary"]],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#e5d7a0",
+        "line-width": {"base": 1.2, "stops": [[5, 0.1], [9, 0.5], [20, 18]]}
+      }
+    },
+    {
+      "id": "highway-motorway-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "motorway"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-opacity": {"stops": [[5, 0], [6, 1]]},
+        "line-width": {
+          "base": 1.2,
+          "stops": [[5, 0], [6, 0.6], [7, 1.5], [20, 22]]
+        }
+      }
+    },
+    {
+      "id": "highway-motorway",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "highway", "motorway"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "#e5b87e",
+        "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 10]]}
+      }
+    },
+    {
+      "id": "trail",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        [
+          "any",
+          ["==", ["get", "piste:grooming"], "backcountry"],
+          ["==", ["get", "trail"], "yes"],
+          ["==", ["get", "foot"], "designated"],
+          ["in", "Trail", ["get", "name"]]
+        ],
+        ["==", ["get", "main_trail"], "no"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgb(120, 100, 80)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 0.7, 14, 2.5],
+        "line-dasharray": [4, 2],
+        "line-opacity": ["interpolate", ["linear"], ["zoom"], 10, 0, 10.5, 1]
+      }
+    },
+    {
+      "id": "trail-unclear",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "minzoom": 16,
+      "filter": ["all", ["!has", "name"]],
+      "paint": {
+        "line-color": "rgb(120, 100, 80)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 0.7, 14, 2.5],
+        "line-dasharray": [4, 2],
+        "line-opacity": ["interpolate", ["linear"], ["zoom"], 16, 0, 16.2, 1]
+      }
+    },
+    {
+      "id": "main-trails-on-roads",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "filter": ["all", ["==", "main_trail", "yes"]],
+      "paint": {
+        "line-color": "rgb(230,76,0)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 1.5, 14, 2.5]
+      }
+    },
+    {
+      "id": "main-trails",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "filter": ["all", ["==", "main_trail", "yes"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgb(230,76,0)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 1.5, 14, 2.5]
+      }
+    },
+    {
+      "id": "rail-dash",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "railwayfgb",
+      "minzoom": 9,
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-width": 5,
+        "line-dasharray": [0.125, 2],
+        "line-opacity": {"stops": [[9, 0], [10, 1]]}
+      }
+    },
+    {
+      "id": "rail",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "railwayfgb",
+      "minzoom": 9,
+      "layout": {"visibility": "visible"},
+      "paint": {"line-opacity": {"stops": [[9, 0], [10, 1]]}}
+    },
+    {
+      "id": "waterbody-label",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "hydrofgb",
+      "minzoom": 14.5,
+      "filter": ["all", ["==", "$type", "Polygon"]],
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-font": ["Open Sans Bold Italic"],
+        "text-size": 12,
+        "text-max-width": 6,
+        "text-letter-spacing": 0.05,
+        "text-pitch-alignment": "auto",
+        "text-ignore-placement": false
+      },
+      "paint": {
+        "text-color": "rgb(101, 137, 191)",
+        "text-halo-color": "rgb(240, 240, 240)",
+        "text-halo-width": 1.25
+      }
+    },
+    {
+      "id": "park-label",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "parkfgb",
+      "minzoom": 13,
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-font": ["Roboto Medium"],
+        "text-size": 14,
+        "text-letter-spacing": 0.1,
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-color": "rgb(67, 138, 57)",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1.25
+      }
+    },
+    {
+      "id": "us-interstate-shield",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "minzoom": 10,
+      "filter": ["all", ["in", "network", "us-interstate"]],
+      "layout": {
+        "text-field": "{ref}",
+        "text-font": ["Noto Sans"],
+        "icon-image": "{network}_{ref_length}",
+        "text-size": 10,
+        "icon-size": 0.035
+      },
+      "paint": {"text-color": "#fff"}
+    },
+    {
+      "id": "state-highway-shield",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "minzoom": 12,
+      "filter": ["all", ["in", "network", "us-state"]],
+      "layout": {
+        "icon-image": "{network}_{ref_length}",
+        "icon-rotation-alignment": "viewport",
+        "icon-size": 1,
+        "symbol-placement": {"base": 1, "stops": [[10, "point"], [11, "line"]]},
+        "symbol-spacing": 200,
+        "text-field": "{ref}",
+        "text-font": ["Noto Sans Regular"],
+        "text-rotation-alignment": "viewport",
+        "text-size": 10
+      },
+      "paint": {"text-color": "rgba(0, 0, 0, 1)"}
+    },
+    {
+      "id": "us-highway-shield",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "minzoom": 12,
+      "filter": ["all", ["in", "network", "us-highway"]],
+      "layout": {
+        "icon-image": "{network}_{ref_length}",
+        "icon-rotation-alignment": "viewport",
+        "symbol-placement": {"base": 1, "stops": [[10, "point"], [11, "line"]]},
+        "symbol-spacing": 200,
+        "text-field": "{ref}",
+        "text-font": ["Noto Sans Regular"],
+        "text-rotation-alignment": "viewport",
+        "text-size": 10,
+        "icon-size": 0.03
+      },
+      "paint": {"text-color": "rgba(0, 0, 0, 1)"}
+    },
+    {
+      "id": "highway-name",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "roadfgb",
+      "minzoom": 12.2,
+      "layout": {
+        "text-field": "{name}",
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-rotation-alignment": "map",
+        "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
+      },
+      "paint": {
+        "text-color": "#765",
+        "text-halo-blur": 0.5,
+        "text-halo-width": 1,
+        "text-halo-color": "rgba(255, 255, 255, 1)"
+      }
+    },
+    {
+      "id": "trail-label",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "minzoom": 13,
+      "filter": ["all", ["has", "name"], ["==", "main_trail", "no"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Italic"],
+        "text-size": {"base": 1, "stops": [[13, 10], [16, 12]]},
+        "symbol-placement": "line",
+        "symbol-spacing": 200,
+        "text-letter-spacing": 0.1,
+        "text-max-angle": 30,
+        "text-transform": "none"
+      },
+      "paint": {
+        "text-color": "rgb(80, 60, 50)",
+        "text-halo-color": "rgba(255, 255, 255, 0.9)",
+        "text-halo-width": 2,
+        "text-halo-blur": 0.5
+      }
+    }
+  ],
+  "id": "i2aadcf"
+}
