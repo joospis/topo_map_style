@@ -6,14 +6,7 @@
     "basemap": {"type": "vector", "url": "http://localhost:3002/basemap"},
     "hillshade": {"type": "raster", "url": "http://localhost:3000/hillshade"},
     "osm": {"type": "vector", "url": "http://localhost:3000/osm"},
-    "contour_feet": {
-      "type": "vector",
-      "url": "http://localhost:3000/contour_feet"
-    },
-    "contour_meter": {
-      "type": "vector",
-      "url": "http://localhost:3000/contour_meter"
-    }
+    "contour": {"type": "vector", "url": "http://localhost:3000/contour_feet"}
   },
   "sprite": "http://localhost:3001/topo_sprites",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
@@ -92,7 +85,7 @@
     {
       "id": "contours-intermediate-imperial",
       "type": "line",
-      "source": "contour_feet",
+      "source": "contour",
       "source-layer": "contour",
       "filter": ["all", ["==", "is_index", "0"]],
       "paint": {
@@ -104,7 +97,7 @@
     {
       "id": "contours-index-imperial",
       "type": "line",
-      "source": "contour_feet",
+      "source": "contour",
       "source-layer": "contour",
       "filter": ["all", ["==", "is_index", "1"]],
       "paint": {
@@ -116,7 +109,7 @@
     {
       "id": "contours-labels-imperial",
       "type": "symbol",
-      "source": "contour_feet",
+      "source": "contour",
       "source-layer": "contour",
       "minzoom": 15,
       "filter": ["all", ["==", "is_index", "1"]],
@@ -387,7 +380,7 @@
           ["==", ["get", "foot"], "designated"],
           ["in", "Trail", ["get", "name"]]
         ],
-        ["==", ["get", "main_trail"], "no"]
+        ["!", ["has", "main_trail"]]
       ],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -409,6 +402,42 @@
         "line-width": ["interpolate", ["linear"], ["zoom"], 10, 0.7, 14, 2.5],
         "line-dasharray": [4, 2],
         "line-opacity": ["interpolate", ["linear"], ["zoom"], 16, 0, 16.2, 1]
+      }
+    },
+    {
+      "id": "trail-highway-track-casing",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "filter": ["all", ["==", "highway", "track"]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(133, 133, 133, 1)",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        }
+      }
+    },
+    {
+      "id": "trail-highway-track",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "trailfgb",
+      "filter": ["all", ["==", "highway", "track"]],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(224, 224, 205, 1)",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1,
+          "stops": [[12, 1], [13, 2], [14, 3], [20, 10]]
+        }
       }
     },
     {
@@ -506,10 +535,10 @@
       "filter": ["all", ["in", "network", "us-interstate"]],
       "layout": {
         "text-field": "{ref}",
-        "text-font": ["Noto Sans"],
+        "text-font": ["Roboto Medium"],
         "icon-image": "{network}_{ref_length}",
         "text-size": 10,
-        "icon-size": 0.035
+        "icon-size": 1
       },
       "paint": {"text-color": "#fff"}
     },
@@ -546,10 +575,10 @@
         "symbol-placement": {"base": 1, "stops": [[10, "point"], [11, "line"]]},
         "symbol-spacing": 200,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Roboto Medium"],
         "text-rotation-alignment": "viewport",
         "text-size": 10,
-        "icon-size": 0.03
+        "icon-size": 1
       },
       "paint": {"text-color": "rgba(0, 0, 0, 1)"}
     },
@@ -562,7 +591,7 @@
       "layout": {
         "text-field": "{name}",
         "symbol-placement": "line",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Roboto Medium"],
         "text-rotation-alignment": "map",
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
@@ -579,10 +608,10 @@
       "source": "osm",
       "source-layer": "trailfgb",
       "minzoom": 13,
-      "filter": ["all", ["has", "name"], ["==", "main_trail", "no"]],
+      "filter": ["all", ["has", "name"], ["!has", "main_trail"]],
       "layout": {
         "text-field": "{name}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Roboto Italic"],
         "text-size": {"base": 1, "stops": [[13, 10], [16, 12]]},
         "symbol-placement": "line",
         "symbol-spacing": 200,
