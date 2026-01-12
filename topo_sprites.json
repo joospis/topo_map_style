@@ -1,4 +1,11 @@
 {
+  "route_arrow": {
+    "height": 15,
+    "pixelRatio": 1,
+    "width": 15,
+    "x": 66,
+    "y": 30
+  },
   "us-highway_1": {
     "height": 17,
     "pixelRatio": 1,
