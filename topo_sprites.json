@@ -10,22 +10,22 @@
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 0,
-    "y": 80
+    "x": 80,
+    "y": 0
   },
   "caution": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 0,
-    "y": 160
+    "x": 160,
+    "y": 0
   },
   "convenience": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 80,
-    "y": 0
+    "x": 0,
+    "y": 80
   },
   "doctor": {
     "height": 80,
@@ -38,22 +38,22 @@
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 80,
-    "y": 160
+    "x": 160,
+    "y": 80
   },
   "hut": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 160,
-    "y": 0
+    "x": 0,
+    "y": 160
   },
   "ice-cream": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 160,
-    "y": 80
+    "x": 80,
+    "y": 160
   },
   "information": {
     "height": 80,
@@ -66,154 +66,161 @@
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 240,
-    "y": 0
+    "x": 0,
+    "y": 240
   },
   "lodging": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 240,
-    "y": 80
+    "x": 80,
+    "y": 240
   },
   "mountain": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 240,
-    "y": 160
+    "x": 160,
+    "y": 240
   },
   "parking": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 320,
-    "y": 0
+    "x": 0,
+    "y": 320
   },
   "picnic-site": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 400,
-    "y": 0
+    "x": 0,
+    "y": 400
   },
   "post": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 320,
-    "y": 80
+    "x": 80,
+    "y": 320
   },
   "restaurant": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 320,
-    "y": 160
+    "x": 160,
+    "y": 320
   },
   "route_arrow": {
     "height": 15,
     "pixelRatio": 1,
     "width": 15,
-    "x": 480,
-    "y": 126
+    "x": 186,
+    "y": 494
+  },
+  "saddle": {
+    "height": 80,
+    "pixelRatio": 1,
+    "width": 80,
+    "x": 80,
+    "y": 400
   },
   "shelter": {
     "height": 80,
     "pixelRatio": 1,
     "width": 80,
-    "x": 400,
-    "y": 80
+    "x": 160,
+    "y": 400
   },
   "us-highway_1": {
     "height": 17,
     "pixelRatio": 1,
     "width": 17,
-    "x": 488,
-    "y": 46
+    "x": 136,
+    "y": 494
   },
   "us-highway_2": {
     "height": 17,
     "pixelRatio": 1,
     "width": 17,
-    "x": 488,
-    "y": 63
+    "x": 153,
+    "y": 494
   },
   "us-highway_3": {
     "height": 16,
     "pixelRatio": 1,
     "width": 21,
-    "x": 488,
-    "y": 0
+    "x": 115,
+    "y": 480
   },
   "us-interstate_1": {
     "height": 16,
     "pixelRatio": 1,
     "width": 16,
-    "x": 488,
-    "y": 80
+    "x": 170,
+    "y": 480
   },
   "us-interstate_2": {
     "height": 16,
     "pixelRatio": 1,
     "width": 16,
-    "x": 488,
-    "y": 96
+    "x": 170,
+    "y": 496
   },
   "us-interstate_3": {
     "height": 16,
     "pixelRatio": 1,
     "width": 21,
-    "x": 488,
-    "y": 16
+    "x": 115,
+    "y": 496
   },
   "us-state_1": {
     "height": 14,
     "pixelRatio": 1,
     "width": 17,
-    "x": 488,
-    "y": 112
+    "x": 186,
+    "y": 480
   },
   "us-state_2": {
     "height": 14,
     "pixelRatio": 1,
     "width": 22,
-    "x": 488,
-    "y": 32
+    "x": 136,
+    "y": 480
   },
   "us-state_3": {
     "height": 14,
     "pixelRatio": 1,
     "width": 27,
-    "x": 483,
-    "y": 174
+    "x": 88,
+    "y": 480
   },
   "us-state_4": {
     "height": 14,
     "pixelRatio": 1,
     "width": 32,
-    "x": 400,
-    "y": 180
+    "x": 83,
+    "y": 494
   },
   "us-state_5": {
     "height": 14,
     "pixelRatio": 1,
     "width": 37,
-    "x": 446,
-    "y": 174
+    "x": 46,
+    "y": 494
   },
   "us-state_6": {
     "height": 14,
     "pixelRatio": 1,
     "width": 42,
-    "x": 446,
-    "y": 160
+    "x": 46,
+    "y": 480
   },
   "wetland": {
     "height": 20,
     "pixelRatio": 1,
     "width": 46,
-    "x": 400,
-    "y": 160
+    "x": 0,
+    "y": 480
   }
 }

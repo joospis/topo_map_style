@@ -10,22 +10,22 @@
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 0,
-    "y": 160
+    "x": 160,
+    "y": 0
   },
   "caution": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 0,
-    "y": 320
+    "x": 320,
+    "y": 0
   },
   "convenience": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 160,
-    "y": 0
+    "x": 0,
+    "y": 160
   },
   "doctor": {
     "height": 160,
@@ -38,22 +38,22 @@
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 160,
-    "y": 320
+    "x": 320,
+    "y": 160
   },
   "hut": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 320,
-    "y": 0
+    "x": 0,
+    "y": 320
   },
   "ice-cream": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 320,
-    "y": 160
+    "x": 160,
+    "y": 320
   },
   "information": {
     "height": 160,
@@ -66,154 +66,161 @@
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 480,
-    "y": 0
+    "x": 0,
+    "y": 480
   },
   "lodging": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 480,
-    "y": 160
+    "x": 160,
+    "y": 480
   },
   "mountain": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 480,
-    "y": 320
+    "x": 320,
+    "y": 480
   },
   "parking": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 640,
-    "y": 0
+    "x": 0,
+    "y": 640
   },
   "picnic-site": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 800,
-    "y": 0
+    "x": 0,
+    "y": 800
   },
   "post": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 640,
-    "y": 160
+    "x": 160,
+    "y": 640
   },
   "restaurant": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 640,
-    "y": 320
+    "x": 320,
+    "y": 640
   },
   "route_arrow": {
     "height": 30,
     "pixelRatio": 2,
     "width": 30,
-    "x": 960,
-    "y": 252
+    "x": 372,
+    "y": 988
+  },
+  "saddle": {
+    "height": 160,
+    "pixelRatio": 2,
+    "width": 160,
+    "x": 160,
+    "y": 800
   },
   "shelter": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 800,
-    "y": 160
+    "x": 320,
+    "y": 800
   },
   "us-highway_1": {
     "height": 34,
     "pixelRatio": 2,
     "width": 34,
-    "x": 976,
-    "y": 92
+    "x": 272,
+    "y": 988
   },
   "us-highway_2": {
     "height": 34,
     "pixelRatio": 2,
     "width": 34,
-    "x": 976,
-    "y": 126
+    "x": 306,
+    "y": 988
   },
   "us-highway_3": {
     "height": 32,
     "pixelRatio": 2,
     "width": 42,
-    "x": 976,
-    "y": 0
+    "x": 230,
+    "y": 960
   },
   "us-interstate_1": {
     "height": 32,
     "pixelRatio": 2,
     "width": 32,
-    "x": 976,
-    "y": 160
+    "x": 340,
+    "y": 960
   },
   "us-interstate_2": {
     "height": 32,
     "pixelRatio": 2,
     "width": 32,
-    "x": 976,
-    "y": 192
+    "x": 340,
+    "y": 992
   },
   "us-interstate_3": {
     "height": 32,
     "pixelRatio": 2,
     "width": 42,
-    "x": 976,
-    "y": 32
+    "x": 230,
+    "y": 992
   },
   "us-state_1": {
     "height": 28,
     "pixelRatio": 2,
     "width": 34,
-    "x": 976,
-    "y": 224
+    "x": 372,
+    "y": 960
   },
   "us-state_2": {
     "height": 28,
     "pixelRatio": 2,
     "width": 44,
-    "x": 976,
-    "y": 64
+    "x": 272,
+    "y": 960
   },
   "us-state_3": {
     "height": 28,
     "pixelRatio": 2,
     "width": 54,
-    "x": 966,
-    "y": 348
+    "x": 176,
+    "y": 960
   },
   "us-state_4": {
     "height": 28,
     "pixelRatio": 2,
     "width": 64,
-    "x": 800,
-    "y": 360
+    "x": 166,
+    "y": 988
   },
   "us-state_5": {
     "height": 28,
     "pixelRatio": 2,
     "width": 74,
-    "x": 892,
-    "y": 348
+    "x": 92,
+    "y": 988
   },
   "us-state_6": {
     "height": 28,
     "pixelRatio": 2,
     "width": 84,
-    "x": 892,
-    "y": 320
+    "x": 92,
+    "y": 960
   },
   "wetland": {
     "height": 40,
     "pixelRatio": 2,
     "width": 92,
-    "x": 800,
-    "y": 320
+    "x": 0,
+    "y": 960
   }
 }
