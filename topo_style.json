@@ -162,30 +162,6 @@
       "paint": {"fill-pattern": "wetland"}
     },
     {
-      "id": "waterline-casing",
-      "type": "line",
-      "source": "osm",
-      "source-layer": "hydrofgb",
-      "filter": ["any", ["==", "intermittent", "no"], ["!has", "wetland"]],
-      "paint": {
-        "line-color": "rgba(66, 103, 255, 1)",
-        "line-opacity": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          7,
-          0,
-          10,
-          0.2,
-          12,
-          0.5,
-          13,
-          1
-        ],
-        "line-width": 1.7
-      }
-    },
-    {
       "id": "waterline",
       "type": "line",
       "source": "osm",
@@ -261,7 +237,7 @@
       "source-layer": "roadfgb",
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(224, 224, 205, 1)",
+        "line-color": "#ccc",
         "line-opacity": 1,
         "line-width": {
           "base": 1,
@@ -379,7 +355,8 @@
           ["==", ["get", "trail"], "yes"],
           ["==", ["get", "highway"], "footway"],
           ["==", ["get", "foot"], "designated"],
-          ["in", "Trail", ["get", "name"]]
+          ["in", "Trail", ["get", "name"]],
+          ["in", "trail", ["get", "name"]]
         ],
         ["!", ["has", "main_trail"]]
       ],
@@ -434,7 +411,7 @@
       "filter": ["all", ["==", "highway", "track"]],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(224, 224, 205, 1)",
+        "line-color": "#ccc",
         "line-opacity": 1,
         "line-width": {
           "base": 1,
