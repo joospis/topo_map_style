@@ -3,252 +3,252 @@
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3200,
+    "x": 0,
     "y": 0
   },
   "campsite": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3360,
+    "x": 160,
     "y": 0
   },
   "caution": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3520,
+    "x": 320,
     "y": 0
   },
   "convenience": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3680,
+    "x": 480,
     "y": 0
   },
   "doctor": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3840,
+    "x": 640,
     "y": 0
   },
   "grocery": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3200,
-    "y": 160
+    "x": 800,
+    "y": 0
   },
   "hut": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3360,
+    "x": 0,
     "y": 160
   },
   "ice-cream": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3520,
-    "y": 160
+    "x": 0,
+    "y": 320
   },
   "information": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3680,
-    "y": 160
+    "x": 0,
+    "y": 480
   },
   "library": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3840,
-    "y": 160
+    "x": 0,
+    "y": 640
   },
   "lodging": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3200,
-    "y": 320
+    "x": 0,
+    "y": 800
   },
   "mountain": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3360,
-    "y": 320
+    "x": 160,
+    "y": 160
   },
   "parking": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3520,
-    "y": 320
+    "x": 320,
+    "y": 160
   },
   "picnic-site": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3680,
-    "y": 320
+    "x": 480,
+    "y": 160
   },
   "post": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3840,
-    "y": 320
+    "x": 640,
+    "y": 160
   },
   "restaurant": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3200,
-    "y": 480
+    "x": 800,
+    "y": 160
   },
   "route_arrow": {
     "height": 30,
     "pixelRatio": 2,
     "width": 30,
-    "x": 4064,
-    "y": 218
+    "x": 340,
+    "y": 988
   },
   "saddle": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3360,
-    "y": 480
+    "x": 160,
+    "y": 320
   },
   "shelter": {
     "height": 160,
     "pixelRatio": 2,
     "width": 160,
-    "x": 3520,
+    "x": 160,
     "y": 480
   },
   "us-highway_1": {
     "height": 34,
     "pixelRatio": 2,
     "width": 34,
-    "x": 4000,
-    "y": 184
+    "x": 272,
+    "y": 988
   },
   "us-highway_2": {
     "height": 34,
     "pixelRatio": 2,
     "width": 34,
-    "x": 4034,
-    "y": 184
+    "x": 306,
+    "y": 988
   },
   "us-highway_3": {
     "height": 32,
     "pixelRatio": 2,
     "width": 42,
-    "x": 4054,
-    "y": 124
+    "x": 230,
+    "y": 960
   },
   "us-interstate_1": {
     "height": 32,
     "pixelRatio": 2,
     "width": 32,
-    "x": 4000,
-    "y": 218
+    "x": 960,
+    "y": 0
   },
   "us-interstate_2": {
     "height": 32,
     "pixelRatio": 2,
     "width": 32,
-    "x": 4032,
-    "y": 218
+    "x": 992,
+    "y": 0
   },
   "us-interstate_3": {
     "height": 32,
     "pixelRatio": 2,
     "width": 42,
-    "x": 4000,
-    "y": 152
+    "x": 230,
+    "y": 992
   },
   "us-state_1": {
     "height": 28,
     "pixelRatio": 2,
     "width": 34,
-    "x": 4000,
-    "y": 250
+    "x": 316,
+    "y": 960
   },
   "us-state_2": {
     "height": 28,
     "pixelRatio": 2,
     "width": 44,
-    "x": 4042,
-    "y": 156
+    "x": 272,
+    "y": 960
   },
   "us-state_3": {
     "height": 28,
     "pixelRatio": 2,
     "width": 54,
-    "x": 4000,
-    "y": 124
+    "x": 176,
+    "y": 960
   },
   "us-state_4": {
     "height": 28,
     "pixelRatio": 2,
     "width": 64,
-    "x": 4000,
-    "y": 96
+    "x": 166,
+    "y": 988
   },
   "us-state_5": {
     "height": 28,
     "pixelRatio": 2,
     "width": 74,
-    "x": 4000,
-    "y": 68
+    "x": 92,
+    "y": 988
   },
   "us-state_6": {
     "height": 28,
     "pixelRatio": 2,
     "width": 84,
-    "x": 4000,
-    "y": 40
+    "x": 92,
+    "y": 960
   },
   "water_large": {
-    "height": 1600,
+    "height": 160,
     "pixelRatio": 2,
-    "width": 1600,
-    "x": 0,
-    "y": 0
+    "width": 160,
+    "x": 160,
+    "y": 640
   },
   "water_medium": {
-    "height": 1600,
+    "height": 160,
     "pixelRatio": 2,
-    "width": 1600,
-    "x": 1600,
-    "y": 0
+    "width": 160,
+    "x": 160,
+    "y": 800
   },
   "water_questionable": {
-    "height": 1600,
+    "height": 160,
     "pixelRatio": 2,
-    "width": 1600,
-    "x": 0,
-    "y": 1600
+    "width": 160,
+    "x": 320,
+    "y": 320
   },
   "water_small": {
-    "height": 1600,
+    "height": 160,
     "pixelRatio": 2,
-    "width": 1600,
-    "x": 1600,
-    "y": 1600
+    "width": 160,
+    "x": 480,
+    "y": 320
   },
   "wetland": {
     "height": 40,
     "pixelRatio": 2,
     "width": 92,
-    "x": 4000,
-    "y": 0
+    "x": 0,
+    "y": 960
   }
 }
